@@ -1,5 +1,5 @@
-class School {
-  contructor(name, level, numberOfStudents){
+class School{
+  constructor(name, level, numberOfStudents){
     this._name = name
     this._level = level
     this._numberOfStudents = numberOfStudents
@@ -26,7 +26,8 @@ class School {
   }
 
   static pickSubstituteTeacher(substituteTeachers) {
-    let randomNumber = Math.floor(Math.random() * (substituteTeacher.length - 1))
+    let randomNumber = Math.floor(Math.random() * (substituteTeachers.length - 1))
+    return substituteTeachers[randomNumber]
   }
 }
 
@@ -37,7 +38,7 @@ class PrimarySchool extends School{
   }
 
   get pickupPolicy(){
-    return this.pickupPolicy
+    return this._pickupPolicy
   }
 }
 
@@ -54,12 +55,21 @@ class HighSchool extends School {
   }
 
   get sportsTeams(){
-    for(let team in this._sportTeams){
+    for(let team in this._sportsTeams){
       console.log(this._sportsTeams[team])
     }
   }
 }
 
 const lorraineHansbury = new PrimarySchool('Lorraine Hansbury', 514, 'Students must be picked up by a parent, guardian, or a family member over the age of 13.')
-
 lorraineHansbury.quickFacts()
+
+console.log(School.pickSubstituteTeacher(['Jamal Crawford', 'Lou Williams', 'J. R. Smith', 'James Harden', 'Jason Terry', 'Manu Ginobli']))
+
+const alSmith = new HighSchool('Al E. Smith', 415, ['Baseball', 'Basketball', 'Volleyball', 'Track and Field'])
+
+alSmith.sportsTeams
+
+let talesCastanho = new MiddleSchool('Tales Castanho de Andrade', 320)
+
+talesCastanho.quickFacts()
