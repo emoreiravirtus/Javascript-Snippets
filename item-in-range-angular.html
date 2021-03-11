@@ -1,0 +1,4 @@
+<span *ngFor="let n of [].constructor(num); let i = index">
+   <p *ngIf="i % 2 == 0"> <app-even [even]="i"></app-even> </p>
+   <p *ngIf="i % 2 != 0"> <app-odd [odd]="i"></app-odd> </p>
+</span>
