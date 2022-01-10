@@ -1,7 +1,4 @@
 const highAndLow = numbers => {
-  let numbersArray = numbers.split(' ');
-  
-  numbersArray = numbersArray.map(number => parseInt(number));
-  
+  numbers = numbers.split(' ').map(Number);
   return `${Math.max.apply(Math, numbersArray)} ${Math.min.apply(Math, numbersArray)}`;
 }
