@@ -5,3 +5,7 @@ function countSheeps(arrayOfSheep) {
   
   return presentSheeps;
 }
+
+function countSheeps(arrayOfSheeps) {
+  return arrayOfSheeps.filter(Boolean).length;
+}
